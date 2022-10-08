@@ -1,5 +1,5 @@
 export function getAppointmentsForDay(state, day) {
-  // Find provided day from object
+  //Find provided day from object
   let specificDay = state.days.filter(d => d.name === day)[0];
   if(!specificDay) {
    return [];
