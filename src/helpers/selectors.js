@@ -32,7 +32,7 @@ export function getInterviewersForDay(state, day) {
   }
   let result = [];
 
-  // Find where id matches id of states.appointments
+  // Find where id matches id of states.interviewers
   for(const id of specificDay.interviewers) {
     const interviewersObj = state.interviewers[id];
   
