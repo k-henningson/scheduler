@@ -60,7 +60,6 @@ export default function Application(props) {
       ...state,
       appointments
     }));
-    return Promise.resolve();
   };
  
 
