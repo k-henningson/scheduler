@@ -3,6 +3,7 @@ import React from "react";
 import { render, cleanup, waitForElement, fireEvent, getByText, getAllByTestId, getByAltText, getByPlaceholderText, queryByText, queryByAltText } from "@testing-library/react";
 
 import Application from "components/Application";
+import { debug } from "request";
 
 afterEach(cleanup);
 
@@ -51,7 +52,7 @@ describe("Application", () => {
 
   it("loads data, cancels an interview and increases the spots remaining for Monday by 1", async () => {
     // 1. Render the Application.
-    const { container, debug } = render(<Application />);
+    const { container } = render(<Application />);
     // 2. Wait until the text "Archie Cohen" is displayed.
     await waitForElement(() => getByText(container, "Archie Cohen"));
     // 3. Click the "Delete" button on the booked appointment.
@@ -73,7 +74,41 @@ describe("Application", () => {
     queryByText(day, "Monday")
     );
     expect(getByText(day, "2 spots remaining")).toBeInTheDocument();
-    debug();
   });
+
+
+  it("loads data, edits an interview and keeps the spots remaining for Monday the same", async () => {
+    
+    const { container } = render(<Application />);
+
+    await waitForElement(() => getByText(container, "Archie Cohen"));
+
+    const appointment = getAllByTestId(container, "appointment").find(
+      appointment => queryByText(appointment, "Archie Cohen")
+    );
+    
+    fireEvent.click(queryByAltText(appointment, "Edit"));
+    // Edit Archie Cohen student name to my name
+    fireEvent.change(getByPlaceholderText(appointment, /enter student name/i), {
+      target: { value: "Kyra Henningson" },
+    });
+    // Change from Tori current interviewer #2 to Sylvia interviewer #1 
+    fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
+    // Save new changes
+    fireEvent.click(queryByText(appointment, "Save"));
+
+    expect(getByText(appointment, "Saving")).toBeInTheDocument();
+    
+    await waitForElement(() => getByText(appointment, "Kyra Henningson"));
+    expect(getByText(appointment, "Sylvia Palmer")).toBeInTheDocument();
+    // Make sure spots have stayed the same for Monday
+    const day = getAllByTestId(container, "day").find(day =>
+      queryByText(day, "Monday")
+    );
+    expect(getByText(day, "1 spot remaining")).toBeInTheDocument();
+    
+  });
+
+
 
 });
