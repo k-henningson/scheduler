@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-Interview Scheduler is a React project that helps students to book, edit and delete appointments with an interviewer of their choice. Technologies used with Interview Scheduler: ReactJS, Jest, Cypress
+Interview Scheduler is a React project that helps students to book, edit and delete appointments with an interviewer of their choice. Technologies used with Interview Scheduler: ReactJS, Storybook, Jest, Cypress, & Axios. 
 
 ## Setup
 
