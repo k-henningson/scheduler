@@ -5,14 +5,11 @@ Interview Scheduler is a React project that helps students to book, edit and del
 ## Final Product
 
 !["Booking an appointment"](https://github.com/k-henningson/scheduler/blob/master/docs/bookAppointment.gif?raw=true)  
-&NewLine;
-&NewLine;
+<br/><br/>
 !["Edit and delete an appointment"](https://github.com/k-henningson/scheduler/blob/master/docs/editAndDelete.gif?raw=true)  
-&NewLine;
-&NewLine;
+<br/><br/>
 !["Select day"](https://github.com/k-henningson/scheduler/blob/master/docs/daySelector.gif?raw=true)  
-&NewLine;
-&NewLine;
+
 ## Setup
 
 Install dependencies with `npm install`.
