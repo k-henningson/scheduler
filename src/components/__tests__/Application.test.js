@@ -178,6 +178,5 @@ describe("Application", () => {
     //Check back at the starting point
     await waitForElement(() => getByText(container, "Archie Cohen"));
     expect(getByText(container, "Archie Cohen")).toBeInTheDocument();
-    //console.log(prettyDOM(container))
   });
 });
