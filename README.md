@@ -2,6 +2,14 @@
 
 Interview Scheduler is a React project that helps students to book, edit and delete appointments with an interviewer of their choice. Technologies used with Interview Scheduler: ReactJS, Storybook, Jest, Cypress, & Axios. 
 
+## Final Product
+
+!["Booking an appointment"](https://github.com/k-henningson/scheduler/blob/master/docs/bookAppointment.gif?raw=true)
+
+!["Edit and delete an appointment"](https://github.com/k-henningson/scheduler/blob/master/docs/editAndDelete.gif?raw=true)
+
+!["Select day"](https://github.com/k-henningson/scheduler/blob/master/docs/daySelector.gif?raw=true)
+
 ## Setup
 
 Install dependencies with `npm install`.
